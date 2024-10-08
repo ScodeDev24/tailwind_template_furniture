@@ -10,10 +10,10 @@ export default function Nabvar() {
       </section>
       <section className="grid grid-cols-2 col-span-2 items-center space-x-5">
         <Menu>
-          <ButtonItem text="Home" />
-          <ButtonItem text="Catalog" />
-          <ButtonItem text="About us" />
-          <ButtonItem text="Contacts" />
+          <ButtonItem text="Home" to="/" />
+          <ButtonItem text="Catalog" to="/catalog" />
+          <ButtonItem text="About us" to="/about-us" />
+          <ButtonItem text="Contacts" to="/contacts" />
         </Menu>
         <Menu width="16rem" backgroundColor="bg-white">
           <div className="flex items-center">
