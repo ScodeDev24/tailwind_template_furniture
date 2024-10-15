@@ -1,20 +1,35 @@
+import { useState } from "react";
 import ButtonItem from "./ButtonItem";
 import Menu from "./Menu";
 import SingleButton from "./SingleButton";
 
 export default function Nabvar() {
+  const [isOpen, setIsOpen] = useState<Boolean>(false)
   return (
     <nav className="grid grid-cols-3 items-center p-3">
       <section className="col-span-1 flex justify-center">
         <p className="text-3xl">SCode</p>
       </section>
       <section className="grid grid-cols-2 col-span-2 items-center space-x-5">
+        <button
+          className="lg:hidden p-2 focus:outline-none"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+         
         <Menu>
+        <div className={`lg:flex ${isOpen ? 'block' : 'hidden'} flex-col lg:flex-row lg:space-x-5`}> 
           <ButtonItem text="Home" />
           <ButtonItem text="Catalog" />
           <ButtonItem text="About us" />
           <ButtonItem text="Contacts" />
+          </div>
         </Menu>
+   
+        <section className="hidden lg:block">
         <Menu width="16rem" backgroundColor="bg-white">
           <div className="flex items-center">
             <SingleButton>
@@ -44,6 +59,8 @@ export default function Nabvar() {
             </SingleButton>
           </div>
         </Menu>
+        </section>
+
       </section>
 
 
