@@ -7,7 +7,7 @@ import Contacts from "./pages/Contacts";
 
 function App() {
   return (
-    <div className="bg-gray-100">
+    <div >
       <Nabvar />
       <Routes>
         <Route path="/" element={<Home />} />
